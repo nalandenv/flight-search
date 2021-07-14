@@ -1,0 +1,18 @@
+[
+    {
+        "code" : "Al-202",
+        "cost" : "9,500.00",
+        "origin" : "Pune",
+        "destination" : "Delhi",
+        "depart" : "10.00 AM",
+        "arrive" : "12.00 PM"
+    },
+    {
+        "code" : "Al-203",
+        "cost" : "9,500.00",
+        "origin" : "Dehli",
+        "destination" : "Pune",
+        "depart" : "08.00 PM",
+        "arrive" : "11.00 PM"
+    }
+]
