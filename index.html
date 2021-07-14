@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flight Search</title>
-    <script src="index.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Flight Search Engine</h1>
-    <form action="">
+    <form action="/search" id="searchForm">
         <div class="search-field">
             <label for="origin">Origin City</label>
             <input type="text" placeholder="Pune" id="origin" name="origin">
@@ -19,15 +18,11 @@
             <label for="destination">Destination City</label>
             <input type="text" placeholder="Delhi" id="destination" name="destination">
         </div>
-        <div class="search-field">
-            <label for="depDate">Departure Date</label>
-            <input type="date" value="2021-07-14" min="2021-07-14" id="depDate" name="depDate">
-        </div>
-        <div class="search-field">
-            <label for="retDate">Return Date</label>
-            <input type="date" placeholder="Return Date" id="retDate" name="retDate">
-        </div>
         <button>Search</button>
     </form>
+    <div id="result">
+
+    </div>
 </body>
+<script src="index.js"></script>
 </html>
