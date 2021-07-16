@@ -8,25 +8,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section id="heading">
-        <h1>Flight Search Engine</h1>
-    </section>
-    <section id="searchBox">
-        <form action="/search" id="searchForm">
-            <div class="search-field">
-                <label for="origin">Origin City</label>
-                <input type="text" placeholder="Pune" id="origin" name="origin">
-            </div>
-            <div class="search-field">
-                <label for="destination">Destination City</label>
-                <input type="text" placeholder="Delhi" id="destination" name="destination">
-            </div>
-            <button>Search</button>
-        </form>
-    </section>
-    <section id="show">
-        
-    </section>
+    <div class="container">
+            <section id="heading">
+                    <h1>Flight Search Engine</h1>
+                </section>
+                <section id="searchBox">
+                    <div>
+                        <button class="active" id="oneWay">One Way</button>
+                        <button id="ret">Return</button>
+                    </div>
+                    <form action="/search" id="searchForm">
+                        <div class="row">
+                            <div class="search-field">
+                                <label for="origin">Origin City</label>
+                                <input type="text" placeholder="Pune" id="origin" name="origin">
+                            </div>
+                            <div class="search-field">
+                                <label for="destination">Destination City</label>
+                                <input type="text" placeholder="Delhi" id="destination" name="destination">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="search-field">
+                                <label for="depDate">Departure Date</label>
+                                <input type="date" name="depDate" id="depDate" value="2021-07-14" min="2021-07-14">
+                            </div>
+                            <div id="return" class="hidden search-field">
+                                <label for="retDate">Return Date</label>
+                                <input type="date" name="retDate" id="retDate" value="  " min="2021-07-14">
+                            </div>
+                        </div>
+                        <button>Search</button>
+                    </form>
+                </section>
+                <section id="show">
+                    
+                </section>
+    </div>
 </body>
 <script src="index.js"></script>
 </html>

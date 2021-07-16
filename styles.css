@@ -1,3 +1,84 @@
-.search-field {
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,400;1,700&display=swap');
+body{
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.5em;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+#heading h1 {
+    margin: 0;
+    font-size: 2em;
+    padding: 10px 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    margin: 10px 0;
+    padding:  5px 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #82b8ff;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 7  00;
+}
+button:hover {
+    background-color: #1061cc;
+    color: white;
+}
+.active{
+    background-color: #1061cc;
+    color: white;
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    justify-content: flex;
+    flex-direction: row;
     margin-bottom: 5px;
+}
+div .search-field{
+    display: block;
+    width: 50%;
+}
+label{
+    width: 90%;
+    display: block;
+    font-size: 0.7em;
+}
+input[type=text] {
+    width: 90%;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+input:focus{
+    width: 90%;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+input[type=date] {
+    width: 90%;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/* Responsive page */
+@media only screen and (max-width:600px){
+    form{
+        display: block;
+    }
 }
