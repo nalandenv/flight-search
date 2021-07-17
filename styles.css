@@ -20,9 +20,9 @@ body{
 }
 
 button {
-    margin: 10px 0;
     padding:  5px 10px;
     border: 0;
+    margin-bottom: 10px;
     border-radius: 10px;
     background-color: #82b8ff;
     color: black;
@@ -44,7 +44,7 @@ form{
 }
 .row{
     display: flex;
-    justify-content: flex;
+    justify-content: space-between;
     flex-direction: row;
     margin-bottom: 5px;
 }
@@ -76,9 +76,70 @@ input[type=date] {
     border-radius: 10px;
 }
 
+#search {
+    margin: 5px auto;
+    width: 50% !important;
+}
+
+#show{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0 10px;
+}
+.col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+.col .row2{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    flex-direction: column;
+}
+#show h1{
+    padding: 0;
+    margin: 0;
+}
+
+#flight-show {
+    width: 100%;
+    display: inline-block;
+}
+
+#flight-show h2{
+    width: 100%;
+    margin-top: 5px;
+    display: block;
+}
+
+#flight-show .flight{
+    font-size: 1rem;
+    margin-right: 15px;
+    display: inline-block;
+}
+.flight{
+    display: inline-block;
+    width: 30%;
+}
+img{
+    display: inline-block;
+    width: 100%;
+}
 /* Responsive page */
 @media only screen and (max-width:600px){
     form{
+        width: 100%;
         display: block;
+    }
+    .row{
+        flex-direction: column;
+    }
+    div .search-field{
+        width: 100%;
     }
 }

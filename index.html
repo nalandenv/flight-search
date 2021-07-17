@@ -21,28 +21,32 @@
                         <div class="row">
                             <div class="search-field">
                                 <label for="origin">Origin City</label>
-                                <input type="text" placeholder="Pune" id="origin" name="origin">
+                                <input type="text" placeholder="Pune" id="origin" name="origin" required>
                             </div>
                             <div class="search-field">
                                 <label for="destination">Destination City</label>
-                                <input type="text" placeholder="Delhi" id="destination" name="destination">
+                                <input type="text" placeholder="Delhi" id="destination" name="destination" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="search-field">
                                 <label for="depDate">Departure Date</label>
-                                <input type="date" name="depDate" id="depDate" value="2021-07-14" min="2021-07-14">
+                                <input type="date" name="depDate" id="depDate" value="2021-07-14" min="2021-07-14" required>
                             </div>
                             <div id="return" class="hidden search-field">
                                 <label for="retDate">Return Date</label>
-                                <input type="date" name="retDate" id="retDate" value="  " min="2021-07-14">
+                                <input type="date" name="retDate" id="retDate" value="" min="2021-07-14">
                             </div>
                         </div>
-                        <button>Search</button>
+                        <button id="search">Search</button>
                     </form>
                 </section>
                 <section id="show">
-                    
+                    <div class="col">
+                        <section id="flight-show">
+
+                        </section>
+                    </div>
                 </section>
     </div>
 </body>
