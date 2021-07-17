@@ -142,4 +142,8 @@ img{
     div .search-field{
         width: 100%;
     }
+    .flight{
+        display: block;
+        width: 100%;
+    }
 }

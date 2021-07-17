@@ -67,7 +67,17 @@ const flights = [
         "destination" : "pune",
         "dcode" : "PNQ",
         "depart" : "12.00 PM",
-        "arrive" : "01.00 PM"
+        "arrive" : "01.00 PM",
+        "return" : {
+            "code" : "Al-202",
+            "cost" : "8,500.00",
+            "origin" : "pune",
+            "ocode" : "PNQ",
+            "destination" : "mumbai",
+            "dcode" : "BOM",
+            "depart" : "06.00 PM",
+            "arrive" : "07.00 PM"
+    }
     },
     {
         "code" : "Al-214",
@@ -77,7 +87,17 @@ const flights = [
         "destination" : "mumbai",
         "dcode" : "BOM",
         "depart" : "06.00 PM",
-        "arrive" : "07.00 PM"
+        "arrive" : "07.00 PM",
+        "return" : {
+            "code" : "Al-245",
+            "cost" : "7,500.00",
+            "origin" : "mumbai",
+            "ocode" : "BOM",
+            "destination" : "pune",
+            "dcode" : "PNQ",
+            "depart" : "10.00 PM",
+            "arrive" : "11.00 PM"
+    }
     },
     {
         "code" : "Al-206",
@@ -87,7 +107,17 @@ const flights = [
         "destination" : "kolkata",
         "dcode" : "CCU",
         "depart" : "06.00 AM",
-        "arrive" : "10.00 AM"
+        "arrive" : "10.00 AM",
+        "return" : {
+            "code" : "Al-222",
+            "cost" : "21,500.00",
+            "origin" : "kolkata",
+            "ocode" : "CCU",
+            "destination" : "chennai",
+            "dcode" : "MAA",
+            "depart" : "06.00 PM",
+            "arrive" : "09.00 PM"
+    }
     },
     {
         "code" : "Al-273",
@@ -96,8 +126,18 @@ const flights = [
         "ocode" : "CCU",
         "destination" : "chennai",
         "dcode" : "MAA",
-        "depart" : "07.00 PM",
-        "arrive" : "11.00 PM"
+        "depart" : "03.00 PM",
+        "arrive" : "05.00 PM",
+        "return" : {
+            "code" : "Al-202",
+            "cost" : "17,500.00",
+            "origin" : "chennai",
+            "ocode" : "MAA",
+            "destination" : "kolkata",
+            "dcode" : "CCU",
+            "depart" : "09.00 PM",
+            "arrive" : "11.00 PM"
+    }
     },
 ]
 const stringData = JSON.stringify(flights);
@@ -123,6 +163,7 @@ ret.addEventListener('click', function(){
 const searchForm = document.querySelector('#searchForm');
 searchForm.addEventListener('submit', function(e){
     e.preventDefault();
+    resetResults();
     const origin = document.querySelectorAll('input')[0].value;
     const destination = document.querySelectorAll('input')[1].value;
     const show = document.querySelector('#show');
@@ -135,7 +176,7 @@ searchForm.addEventListener('submit', function(e){
     row.className = 'row2';
     const row2 = document.createElement('div');
     row2.className = 'row2';
-    heading.innerText = `${origin} > ${destination}`;
+    heading.innerText = `${origin.toUpperCase()} > ${destination.toUpperCase()}`;
     const spanDate = document.createElement('span');
     const spanDate2 = document.createElement('span');
     row.append(heading);
@@ -143,7 +184,7 @@ searchForm.addEventListener('submit', function(e){
     spanDate.innerText = `Depart: ${depDate}`;
     row2.append(spanDate);
     if(retDate){
-        heading.innerText = `${origin} > ${destination} > ${origin}`;
+        heading.innerText = `${origin.toUpperCase()} > ${destination.toUpperCase()} > ${origin.toUpperCase()}`;
         spanDate2.innerText = `Return: ${retDate}`;
         row2.append(spanDate2);
     }
@@ -183,9 +224,8 @@ const displayFlights = (origin, destination) => {
         }
     }
     if(found == false){
-        const h2 = document.createElement('h2')
-        h2.innerText = `Flight not found`;
-        show.append(h2);
+        alert("Flight Not Found");
+        resetResults();
     }
 }
 
@@ -194,16 +234,13 @@ const resetResults = () =>{
     const e = document.querySelector('#flight-show');
     const e2 = document.querySelector('#show');
     const fs = document.createElement('section');
-    try{
-        e.innerHTML = "";
-        e2.innerHTML = "";
-        fs.setAttribute('id','flight-show');
-        const col = document.createElement('div');
-        col.className = 'col';
-        col.append(fs);
-        e.append(col);
-    } catch(e){
-    }
+    e.innerHTML = "";
+    e2.innerHTML = "";
+    fs.setAttribute('id','flight-show');
+    const col = document.createElement('div');
+    col.className = 'col';
+    col.append(fs);
+    e.append(col);
     found = false;
 }
 
